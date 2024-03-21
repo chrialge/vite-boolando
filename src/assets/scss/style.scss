@@ -1,4 +1,3 @@
-
-body{
-    background-color: green;
-}
+@use './Partial/common';
+@use './Partial/header';
+@use 'bootstrap'
