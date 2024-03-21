@@ -134,7 +134,6 @@ export default {
             console.log(this.products[index])
             this.img = this.products[index].images.front
             this.products[index].images.front = this.products[index].images.back
-            console.log(img)
         },
         returnImg(index) {
             this.products[index].images.front = this.img
@@ -153,20 +152,21 @@ export default {
         <div class="container">
             <div class="row">
 
-                <!-- first product -->
+                <!--product -->
                 <div class="product col-4" v-for="(product, index) in products">
-                    <div class="card" style="width:18rem;">
-                        <!-- image with badge -->
+                    <div class="card" >
+                        <!-- image with badges -->
                         <img :src="'/images/' + product.images.front" class="card-img-top" alt="..."
                             @mouseenter="changeImg(index)" @mouseleave="returnImg(index)">
                         <div class="heart"> &#9829;</div>
                         <div class="badges">
                             <div class="sales inline-block-container"
-                                :class="{ 'disp': product.badges.discount == false }">{{ product.badges.discount }}</div>
+                                :class="{ 'display-none': product.badges.discount == false }">{{ product.badges.discount }}
+                            </div>
                             <div class="sostenibility inline-block-container"
-                                :class="{ 'disp': product.badges.sostenibility == false }">Sostenibilita</div>
+                                :class="{ 'display-none': product.badges.sostenibility == false }">Sostenibilita</div>
                         </div>
-                        <!-- /image with badge -->
+                        <!-- /image with badges -->
 
                         <!-- card body -->
                         <div class="card-body">
@@ -175,17 +175,17 @@ export default {
                             <div class="price">
                                 <div class="price">
                                     <div class="price-at-the-moment">{{ product.price.priceDiscount }} &euro;</div>
-                                    <div class="full-price" :class="{ 'display-none': product.price.fullPrice == false }">
-                                        <s>{{ product.price.fullPrice }} &euro;</s></div>
+                                    <div class="full-price"
+                                        :class="{ 'display-none': product.price.fullPrice == false }">
+                                        <s>{{ product.price.fullPrice }} &euro;</s>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!-- /card body -->
                     </div>
                 </div>
-
-
-
+                <!-- /product -->
             </div>
 
 
