@@ -1,10 +1,10 @@
 <script>
 
 export default {
-    name: 'AppMain',
+    name: 'AppHeader',
     data() {
         return {
-            message: 'pacman'
+        
         }
     }
 }

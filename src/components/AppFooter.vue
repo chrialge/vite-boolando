@@ -1,9 +1,9 @@
 <script>
 export default {
-    name: 'AppMain',
+    name: 'AppFooter',
     data() {
         return {
-            message: 'duij'
+            
         }
     }
 }
