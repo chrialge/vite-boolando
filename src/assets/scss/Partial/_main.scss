@@ -1,0 +1,67 @@
+@use './variable' as *;
+
+#site-main {
+    margin-top: 140px;
+
+    .product>.card {
+        margin-bottom: 60px;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px;
+        position: relative;
+
+        .heart {
+            position: absolute;
+            right: 0;
+            top: 15px;
+            font-size: 30px;
+            padding: 0.1rem 0.75rem;
+            background-color: $boolando-lighter;
+        }
+
+        .badges {
+            position: absolute;
+            left: 0;
+            top: 60%;
+            color: var(--boolando-lighter);
+            font-size: 16px;
+
+            .sales {
+                background-color: $boolando-sales;
+            }
+
+            .sostenibility {
+
+                background-color: $boolando-sostenibility;
+            }
+
+            .inline-block-container {
+                display: inline-block;
+                margin-right: 3px;
+                padding: 0.1rem 0.4rem;
+                border-radius: 0.1rem;
+            }
+        }
+
+        .card-body {
+            .card-subtitle {
+                color: gray;
+            }
+
+            .card-title {
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            .price-at-the-moment {
+                color: $boolando-sales;
+                font-weight: 700;
+                display: inline-block;
+            }
+
+            .full-price {
+                margin-left: 8px;
+                display: inline-block;
+            }
+        }
+    }
+}
