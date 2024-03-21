@@ -30,9 +30,10 @@ export default {
 
                 <div class="widget col">
                     <!-- widget shop-user-like-->
-                    <i class="fa-regular fa-user"></i>
-                    <i class="fa-regular fa-heart"></i>
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <a href="#"><i class="fa-regular fa-user"></i></a>
+                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                    <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+                    
                     <!-- /widget shop-user-like -->
                 </div>
             </div>

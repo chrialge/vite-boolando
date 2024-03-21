@@ -2,13 +2,13 @@
 
 
 #site-header {
+    height: 90px;
     position: fixed;
     width: 100%;
     background-color: $boolando-primary;
-    padding: 15px;
     z-index: 1;
     top: 0;
-
+    padding: 15px;
     
     .sidebar {
         gap: 0.5rem;
@@ -17,11 +17,15 @@
         margin: 0;
     }
     .logo {
+        height: 100%;
         width: 15%;
         vertical-align: middle;
-        min-width: 50px;
+        display: flex;
+        justify-content: center;
         img{
-            width: 100%;
+            height: 100%;
+            width: 250px;
+            margin: auto;
         }
     }
     .widget {
@@ -29,7 +33,7 @@
     
         i{
             color:$boolando-lighter;
-            font-size: 20px;
+            font-size: 25px;
             padding-right: 15px;
             
         }

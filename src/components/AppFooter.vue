@@ -30,11 +30,16 @@ export default {
             <div class="social ">
                 <h3>Trovaci anche su</h3>
                 <div class="social-widget d-flex">
-                    <i class="fa-brands fa-square-twitter"></i>
-                    <i class="fa-brands fa-square-facebook"></i>
-                    <i class="fa-brands fa-square-instagram"></i>
-                    <i class="fa-brands fa-pinterest"></i>
-                    <i class="fa-brands fa-square-youtube"></i>
+                    <a href="#" class="text-decoratione-none text-white"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="#" class="text-decoratione-none text-white"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="#" class="text-decoratione-none text-white"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="#" class="text-decoratione-none text-white"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#" class="text-decoratione-none text-white"><i class="fa-brands fa-square-youtube"></i></a>
+
+                    
+                    
+                    
+                    
                 </div>
             </div>
             <!-- /social -->
