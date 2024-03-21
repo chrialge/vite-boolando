@@ -1,0 +1,45 @@
+@use './variable' as *;
+
+#site-footer {
+    background-color: $boolando-dark;
+    color: $boolando-lighter;
+    padding: 40px 0;
+
+    .policy>ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+            font-weight: 400;
+            font-size: 16px;
+            list-style: none;
+            display: inline-block;
+            margin-top: 10px;
+            padding-right: 5px;
+        }
+    }
+
+    .footer-space {
+        justify-content: space-between;
+    }
+
+    .social {
+        width: 160px;
+    }
+
+    h3 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .social-widget {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.5rem;
+
+        i{
+            font-size: 26px;
+        }
+    }
+}

@@ -18,9 +18,9 @@ export default {
                 <h2>Boolando s.r.l</h2>
                 <div class="policy">
                     <ul>
-                        <li><a href="#">Informazioni legali</a></li>
-                        <li><a href="#">Informativa sulla privacy</a></li>
-                        <li><a href="#">Diritto di recesso</a></li>
+                        <li><a href="#" class="text-decoration-none text-white">Informazioni legali</a></li>
+                        <li><a href="#" class="text-decoration-none text-white">Informativa sulla privacy</a></li>
+                        <li><a href="#" class="text-decoration-none text-white">Diritto di recesso</a></li>
                     </ul>
                 </div>
             </div>
@@ -30,11 +30,11 @@ export default {
             <div class="social ">
                 <h3>Trovaci anche su</h3>
                 <div class="social-widget d-flex">
-                    <img src="./assets/img/widget/square-twitter.svg" alt="">
-                    <img src="./assets/img/widget/square-facebook.svg" alt="">
-                    <img src="./assets/img/widget/square-instagram.svg" alt="">
-                    <img src="./assets/img/widget/pinterest.svg" alt="">
-                    <img src="./assets/img/widget/square-youtube.svg" alt="">
+                    <i class="fa-brands fa-square-twitter"></i>
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-pinterest"></i>
+                    <i class="fa-brands fa-square-youtube"></i>
                 </div>
             </div>
             <!-- /social -->

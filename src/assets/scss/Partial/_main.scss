@@ -63,5 +63,10 @@
                 display: inline-block;
             }
         }
+
+        &:hover .heart{
+            color: $boolando-sales;
+            transition: 0.2s;
+        }
     }
 }
