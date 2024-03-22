@@ -52,7 +52,7 @@ export default {
                 <h5 class="card-title">{{ product.gener }}</h5>
                 <div class="price">
                     <div class="price">
-                        <div class="price-at-the-moment">{{(product.price - ((product.price * product.badges.discount)/100).toFixed(2)).toFixed(2) }} &euro;</div>
+                        <div class="price-at-the-moment">{{(product.price - ((product.price * product.badges.discount)/100)).toFixed(2) }} &euro;</div>
                         <div class="full-price" :class="{ 'display-none': product.badges.discount == false }">
                             <s>{{ product.price }} &euro;</s>
                         </div>
