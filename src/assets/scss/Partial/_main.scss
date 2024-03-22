@@ -18,6 +18,15 @@
             font-size: 30px;
             padding: 0.1rem 0.75rem;
             background-color: $boolando-lighter;
+            cursor: pointer;
+
+            &:hover{
+                color: $boolando-sales;
+                transition: 0.2s;
+            }
+        }
+        .heart-red{
+            color: red;
         }
 
         .badges {
@@ -64,11 +73,6 @@
                 margin-left: 8px;
                 display: inline-block;
             }
-        }
-
-        &:hover .heart {
-            color: $boolando-sales;
-            transition: 0.2s;
         }
     }
 }

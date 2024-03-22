@@ -12,18 +12,20 @@ export default {
     },
     methods: {
         changeImg(index) {
-            console.log(this.product)
             this.img = this.product.images.front
             this.product.images.front = this.product.images.back
         },
         returnImg(index) {
             this.product.images.front = this.img
+        },
+        favorite(){
+            if(this.product.isInFavorite === false){
+                this.product.isInFavorite = true
+            }else{
+                this.product.isInFavorite = false 
+            }
         }
     },
-    mounted(){
-        console.log(this.index)
-        console.log(this.product)
-    }
 }
 </script>
 
@@ -34,10 +36,10 @@ export default {
             <!-- image with badges -->
             <img :src="'/images/' + product.images.front" class="card-img-top" alt="..." @mouseenter="changeImg(this.index)"
                 @mouseleave="returnImg(this.index)">
-            <div class="heart"> &#9829;</div>
+            <div class="heart" :class="{'heart-red': product.isInFavorite === true}" @click="favorite()"> &#9829;</div>
             <div class="badges">
                 <div class="sales inline-block-container" :class="{ 'display-none': product.badges.discount == false }">
-                    {{ product.badges.discount}}
+                    {{ product.badges.discount}}%
                 </div>
                 <div class="sostenibility inline-block-container"
                     :class="{ 'display-none': product.badges.sostenibility == false }">Sostenibilita</div>
@@ -50,9 +52,9 @@ export default {
                 <h5 class="card-title">{{ product.gener }}</h5>
                 <div class="price">
                     <div class="price">
-                        <div class="price-at-the-moment">{{ product.price.priceDiscount }} &euro;</div>
-                        <div class="full-price" :class="{ 'display-none': product.price.fullPrice == false }">
-                            <s>{{ product.price.fullPrice }} &euro;</s>
+                        <div class="price-at-the-moment">{{(product.price - ((product.price * product.badges.discount)/100).toFixed(2)).toFixed(2) }} &euro;</div>
+                        <div class="full-price" :class="{ 'display-none': product.badges.discount == false }">
+                            <s>{{ product.price }} &euro;</s>
                         </div>
                     </div>
                 </div>

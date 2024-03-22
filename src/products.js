@@ -3,16 +3,14 @@ export const products =  [
         id: 1,
         gener: "RELAXED FIT TEE UNISEX",
         brand: "Levi's",
+        price: 29.99,
+        isInFavorite: false,
         badges:
         {
-            discount: '50%',
+            discount: 50,
             sostenibility: true
         },
-        price:
-        {
-            priceDiscount: 14.99,
-            fullPrice: 29.99
-        },
+        
         images:
         {
             front: '1.webp',
@@ -23,15 +21,12 @@ export const products =  [
         id: 2,
         gener: "ROSES TEE",
         brand: "Guess",
+        price: 29.99,
+        isInFavorite: false,
         badges:
         {
-            discount: '30%',
+            discount: 30,
             sostenibility: false
-        },
-        price:
-        {
-            priceDiscount: 20.99,
-            fullPrice: 29.99
         },
         images:
         {
@@ -43,15 +38,12 @@ export const products =  [
         id: 3,
         gener: "VOGLIA DI COLORI PASTELLO",
         brand: "Come Zucchero Filato",
+        isInFavorite: false,
+        price: 184.99,
         badges:
         {
-            discount: '30%',
+            discount: 30,
             sostenibility: false
-        },
-        price:
-        {
-            priceDiscount: 129.99,
-            fullPrice: 184.99
         },
         images:
         {
@@ -63,15 +55,12 @@ export const products =  [
         id: 4,
         gener: "TEE UNISEX",
         brand: "Levi's",
+        isInFavorite: false,
+        price: 29.99,
         badges:
         {
-            discount: '50%',
+            discount: 50,
             sostenibility: true
-        },
-        price:
-        {
-            priceDiscount: 14.99,
-            fullPrice: 29.99
         },
         images:
         {
@@ -83,15 +72,12 @@ export const products =  [
         id: 5,
         gener: "STRIPE BODICE",
         brand: "Maya Deluxe",
+        isInFavorite: false,
+        price: 99.99,
         badges:
         {
             discount: false,
             sostenibility: false
-        },
-        price:
-        {
-            priceDiscount: 99.99,
-            fullPrice: false
         },
         images:
         {
@@ -102,16 +88,13 @@ export const products =  [
     {
         id: 6,
         gener: "ROSES TEE",
-        brand: "Guess",
+        brand: "Guess", 
+        price: 29.99,
+        isInFavorite: false,
         badges:
         {
             discount: false,
             sostenibility: true
-        },
-        price:
-        {
-            priceDiscount: 29.99,
-            fullPrice: false
         },
         images:
         {
