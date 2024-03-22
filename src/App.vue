@@ -16,13 +16,15 @@ export default {
   components:{
     AppHeader,
     AppMain,
-    AppFooter
+    AppFooter,
+    
   }
 
 }
 </script>
 
 <template>
+
   <AppHeader/>
   <AppMain/>
   <AppFooter/>

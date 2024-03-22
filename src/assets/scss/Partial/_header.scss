@@ -1,44 +1,6 @@
 @use './variable' as *;
 
-
-#site-header {
-    height: 90px;
-    position: fixed;
-    width: 100%;
+.navbar{
     background-color: $boolando-primary;
-    z-index: 1;
-    top: 0;
-    padding: 15px;
 
-    .sidebar {
-        gap: 0.5rem;
-        font-size: 20px;
-        font-weight: 700;
-        margin: 0;
-    }
-
-    .logo {
-        height: 100%;
-        width: 15%;
-        vertical-align: middle;
-        display: flex;
-        justify-content: center;
-
-        img {
-            height: 100%;
-            width: 250px;
-            margin: auto;
-        }
-    }
-
-    .widget {
-        text-align: end;
-
-        i {
-            color: $boolando-lighter;
-            font-size: 25px;
-            padding-right: 15px;
-
-        }
-    }
 }
