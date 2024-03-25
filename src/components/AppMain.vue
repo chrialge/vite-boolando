@@ -1,21 +1,22 @@
 <script>
-import ProductCard from './ProductCard.vue'
-import {products} from '../products'
+import ProductCard from './ProductCard.vue';
+import { store } from '../state.js'
 export default {
     name: 'AppMain',
     data() {
         return {
             img: '',
-           products
+            store
         }
     },
-    components:{
+    components: {
         ProductCard
     },
     mounted() {
-        console.log(this.products)
-    }
 
+        this.store.getProducts(this.store.base_product_api_url)
+        console.log(this.store)
+    }
 }
 </script>
 <template>
@@ -25,8 +26,8 @@ export default {
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
 
-                <ProductCard :key="product.id" :product="product" :index="index" v-for="(product, index) in products"/>
-               
+                <ProductCard :key="product.id" :product="product" v-for="product in store.products" />
+
             </div>
 
 

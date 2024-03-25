@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-md">
             <a class="navbar-brand d-lg-none" href="#">
                 <LogoApp />
@@ -44,16 +44,19 @@ export default {
                     <li class="nav-item">
                         <a class="nav-link text-white fs-5" aria-current="page" href="#">
                             <i class="fa-regular fa-user"></i>
+                            <span class="d-lg-none ms-2 fs-6">Sign up</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white fs-5" href="#">
                             <i class="fa-regular fa-heart"></i>
+                            <span class="d-lg-none ms-2 fs-6">My Favourite</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white fs-5" href="#">
                             <i class="fa-solid fa-bag-shopping"></i>
+                            <span class="d-lg-none ms-2 fs-6">My shop</span>
                         </a>
                     </li>
                 </ul>

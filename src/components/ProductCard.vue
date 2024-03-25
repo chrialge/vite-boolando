@@ -3,7 +3,6 @@ export default {
     name: 'ProductCard',
     props: {
         product: Object,
-        index: Number,
     },
     data() {
         return {
@@ -11,11 +10,11 @@ export default {
         }
     },
     methods: {
-        changeImg(index) {
+        changeImg() {
             this.img = this.product.images.front
             this.product.images.front = this.product.images.back
         },
-        returnImg(index) {
+        returnImg() {
             this.product.images.front = this.img
         },
         favorite(){
@@ -34,7 +33,7 @@ export default {
     <div class="product col">
         <div class="card">
             <!-- image with badges -->
-            <img :src="'/images/' + product.images.front" class="card-img-top" alt="..." @mouseenter="changeImg(this.index)"
+            <img :src="'/images/' + product.images.front" class="card-img-top" :alt="'image of dress ' + product.brand" @mouseenter="changeImg(this.index)"
                 @mouseleave="returnImg(this.index)">
             <div class="heart" :class="{'heart-red': product.isInFavorite === true}" @click="favorite()"> &#9829;</div>
             <div class="badges">
