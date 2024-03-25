@@ -37,16 +37,13 @@ export default {
             }
         },
         generateCalcDiscount(value){
-            console.log(1-(value/100))
-            if(value == undefined){
-                console.log('ciao')
+            if(value == 1){
+                return value = 0
+            }else{
+                return value = value/100
             }
         }
     },
-    mounted() {
-        // console.log(this.generateDiscount('discount') === undefined)
-    }
-
 }
 </script>
 
@@ -77,8 +74,8 @@ export default {
                 <h5 class="card-title">{{ product.gener }}</h5>
                 <div class="price">
                     <div class="price">
-                        <div class="price-at-the-moment" v-if="this.generateDiscount('discount') == undefined ? this.value = 0 : this.generateDiscount('discount')">
-                            {{ (product.price - ((product.price * generateCalcDiscount(value)) / 100) ).toFixed(2) }} &euro;
+                        <div class="price-at-the-moment" v-if="this.generateDiscount('discount') == undefined ? this.value = 1 : this.generateDiscount('discount')">
+                            {{ (product.price - ((product.price * generateCalcDiscount(value))) ).toFixed(2) }} &euro;
                         </div>
                         <div class="full-price" v-if="this.generateDiscount('discount') !== undefined">
                             <s>{{ product.price }} &euro;</s>

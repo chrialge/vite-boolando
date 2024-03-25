@@ -15,7 +15,7 @@ export default {
     mounted() {
         
         this.state.getProducts(this.state.base_product_api_url)
-        console.log(this.state.products)
+        // console.log(this.state.products)
     }
 }
 </script>
