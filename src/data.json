@@ -7,12 +7,16 @@
         "brand": "Levi's",
         "price": 29.99,
         "isInFavorite": false,
-        "badges":
-        {
-            "discount": 50,
-            "sostenibility": true
-        },
-        
+        "badges": [
+            {
+              "type": "tag",
+              "value": "Sostenibilità"
+            },
+            {
+              "type": "discount",
+              "value": 50
+            }
+        ],
         "images":
         {
             "front": "1.webp",
@@ -25,11 +29,12 @@
         "brand": "Guess",
         "price": 29.99,
         "isInFavorite": false,
-        "badges":
-        {
-            "discount": 30,
-            "sostenibility": false
-        },
+        "badges": [
+            {
+              "type": "discount",
+              "value": 30
+            }
+        ],
         "images":
         {
             "front": "2.webp",
@@ -42,11 +47,12 @@
         "brand": "Come Zucchero Filato",
         "isInFavorite": false,
         "price": 184.99,
-        "badges":
-        {
-            "discount": 30,
-            "sostenibility": false
-        },
+        "badges": [
+            {
+              "type": "discount",
+              "value": 30
+            }
+        ],
         "images":
         {
             "front": "3.webp",
@@ -59,11 +65,16 @@
         "brand": "Levi's",
         "isInFavorite": false,
         "price": 29.99,
-       "badges":
-        {
-            "discount": 50,
-            "sostenibility": true
-        },
+        "badges": [
+            {
+              "type": "tag",
+              "value": "Sostenibilità"
+            },
+            {
+              "type": "discount",
+              "value": 50
+            }
+        ],
         "images":
         {
             "front": "4.webp",
@@ -76,11 +87,16 @@
         "brand": "Maya Deluxe",
         "isInFavorite": false,
         "price": 99.99,
-        "badges":
-        {
-            "discount": false,
-            "sostenibility": false
-        },
+        "badges": [
+            {
+              "type": "tag",
+              "value": "Sostenibilità"
+            },
+            {
+              "type": "discount",
+              "value": 50
+            }
+        ],
         "images":
         {
             "front": "5.webp",
@@ -93,11 +109,12 @@
         "brand": "Guess", 
         "price": 29.99,
         "isInFavorite": false,
-        "badges":
-        {
-            "discount": false,
-            "sostenibility": true
-        },
+        "badges": [
+            {
+              "type": "tag",
+              "value": "Sostenibilità"
+            }
+        ],
         "images":
         {
             "front": "6.webp",
