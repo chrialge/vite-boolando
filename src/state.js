@@ -7,6 +7,10 @@ export const state = reactive({
     products: [],
     base_product_api_url: 'http://localhost:3000/products',
 
+    /**
+     * function get objetcs from the json server
+     * @param {string} url of the json server
+     */
     getProducts(url) {
         axios.get(url)
             .then(response => {

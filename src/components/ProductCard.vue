@@ -1,7 +1,7 @@
 <script>
 export default {
     name: 'ProductCard',
-    value:'',
+    value: '',
     props: {
         product: Object,
     },
@@ -11,13 +11,22 @@ export default {
         }
     },
     methods: {
+        /**
+         * function change image during event @mouseenter on the img
+         */
         changeImg() {
             this.img = this.product.images.front
             this.product.images.front = this.product.images.back
         },
+        /**
+         * function return previous image during event @mouseleave of the img
+         */
         returnImg() {
             this.product.images.front = this.img
         },
+        /**
+         * function change color heart for value of product.isInFavorite durin event @click of the heart
+         */
         favorite() {
             if (this.product.isInFavorite === false) {
                 this.product.isInFavorite = true
@@ -25,22 +34,32 @@ export default {
                 this.product.isInFavorite = false
             }
         },
-        generateDiscount(type) {
+        /**
+         * function generate badge
+         * @param {string} type value of product.badges.type
+         * @returns value of product.badges.value
+         */
+        generateBadges(type) {
             for (let i = 0; i < this.product.badges.length; i++) {
                 const badge = this.product.badges[i];
                 // console.log(badge)
                 if (badge.type === type) {
                     // console.log(badge.value)
-                    
+
                     return this.value = badge.value
                 }
             }
         },
-        generateCalcDiscount(value){
-            if(value == 1){
+        /**
+         * function generate CALC discount/100
+         * @param {number} value return of the function generateBadges('discount')
+         * @returns number 
+         */
+        generateCalcDiscount(value) {
+            if (value == 1) {
                 return value = 0
-            }else{
-                return value = value/100
+            } else {
+                return value = value / 100
             }
         }
     },
@@ -52,17 +71,15 @@ export default {
     <div class="product col">
         <div class="card">
             <!-- image with badges -->
-            <img :src="'/images/' + product.images.front" class="card-img-top" :alt="'image of dress ' + product.brand"
-                @mouseenter="changeImg(this.index)" @mouseleave="returnImg(this.index)">
-            <div class="heart" :class="{ 'heart-red': product.isInFavorite === true }" @click="favorite()"> &#9829;</div>
+            <img :src="'/images/' + product.images.front" class="card-img-top" :alt="'image of dress ' + product.brand" @mouseenter="changeImg(this.index)" @mouseleave="returnImg(this.index)">
+            <div class="heart" :class="{ 'heart-red': product.isInFavorite === true }" @click="favorite()"> &#9829;
+            </div>
             <div class="badges">
-                <div class="sales inline-block-container" 
-                    v-if="this.generateDiscount('discount') !== undefined">
-                    -{{ value}}%
+                <div class="sales inline-block-container" v-if="this.generateBadges('discount') !== undefined">
+                    -{{ value }}%
                 </div>
-                <div class="sostenibility inline-block-container" 
-                    v-if="this.generateDiscount('tag') !== undefined">
-                    {{value}}
+                <div class="sostenibility inline-block-container" v-if="this.generateBadges('tag') !== undefined">
+                    {{ value }}
                 </div>
 
             </div>
@@ -74,10 +91,11 @@ export default {
                 <h5 class="card-title">{{ product.gener }}</h5>
                 <div class="price">
                     <div class="price">
-                        <div class="price-at-the-moment" v-if="this.generateDiscount('discount') == undefined ? this.value = 1 : this.generateDiscount('discount')">
-                            {{ (product.price - ((product.price * generateCalcDiscount(value))) ).toFixed(2) }} &euro;
+                        <div class="price-at-the-moment"
+                            v-if="this.generateBadges('discount') == undefined ? this.value = 1 : this.generateBadges('discount')">
+                            {{ (product.price - ((product.price * generateCalcDiscount(value)))).toFixed(2) }} &euro;
                         </div>
-                        <div class="full-price" v-if="this.generateDiscount('discount') !== undefined">
+                        <div class="full-price" v-if="this.generateBadges('discount') !== undefined">
                             <s>{{ product.price }} &euro;</s>
                         </div>
                     </div>

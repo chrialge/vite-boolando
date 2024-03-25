@@ -7,8 +7,22 @@ export default {
     },
     data() {
         return {
-
+            genders:
+            [
+                'Uomini',
+                'Donne',
+                'Bambini',
+            ],
+            classWidgets:
+            [
+                'fa-regular fa-user',
+                'fa-regular fa-heart',
+                'fa-solid fa-bag-shopping'
+            ]
         }
+    },
+    mounted(){
+
     }
 }
 </script>
@@ -25,14 +39,10 @@ export default {
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" href="#">Uomini</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Donne</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Bambini</a>
+                    <li class="nav-item" v-for="gender in genders">
+                        <a class="nav-link text-white" aria-current="page" href="#">
+                            {{ gender }}
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -41,22 +51,10 @@ export default {
             </a>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="nav-item" v-for="classWidget in classWidgets">
                         <a class="nav-link text-white fs-5" aria-current="page" href="#">
-                            <i class="fa-regular fa-user"></i>
+                            <i :class="classWidget"></i>
                             <span class="d-lg-none ms-2 fs-6">Sign up</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white fs-5" href="#">
-                            <i class="fa-regular fa-heart"></i>
-                            <span class="d-lg-none ms-2 fs-6">My Favourite</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white fs-5" href="#">
-                            <i class="fa-solid fa-bag-shopping"></i>
-                            <span class="d-lg-none ms-2 fs-6">My shop</span>
                         </a>
                     </li>
                 </ul>
