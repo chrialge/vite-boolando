@@ -1,12 +1,12 @@
 <script>
 import ProductCard from './ProductCard.vue';
-import { store } from '../state.js'
+import { state } from '../state.js'
 export default {
     name: 'AppMain',
     data() {
         return {
             img: '',
-            store
+            state
         }
     },
     components: {
@@ -14,8 +14,8 @@ export default {
     },
     mounted() {
 
-        this.store.getProducts(this.store.base_product_api_url)
-        console.log(this.store)
+        this.state.getProducts(this.state.base_product_api_url)
+        console.log(this.state)
     }
 }
 </script>
@@ -26,7 +26,7 @@ export default {
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
 
-                <ProductCard :key="product.id" :product="product" v-for="product in store.products" />
+                <ProductCard :key="product.id" :product="product" v-for="product in state.products" />
 
             </div>
 

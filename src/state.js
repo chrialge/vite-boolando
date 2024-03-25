@@ -2,7 +2,7 @@
 import { reactive } from 'vue';
 import axios from 'axios';
 
-export const store = reactive({
+export const state = reactive({
     message: 'ciao',
     products: [],
     base_product_api_url: 'http://localhost:3000/products',
