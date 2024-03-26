@@ -80,19 +80,33 @@ export default {
 
 <template>
     <!--product -->
-    <div class="product col">            
+    <div class="product col">
         <div class="modal_card" :class="{'display': this.display == false, 'disp': this.display == true}">
             <div class="modal_container">
-                Lorem ipsum dolor sit amet.
-                <button @click="showProduct(display)">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+                <div class="left">
+                    <img :src="'/images/' + product.images.front" class="card-img-top"
+                        :alt="'image of dress ' + product.brand">
+                </div>
+                <div class="right">
+                    <h6><b>Brand:</b> {{ product.brand }}</h6>
+                    <h6><b>Type:</b> {{ product.gener }}</h6>
+                    <h6><b>Price Full:</b> {{ product.price }} &euro;</h6>
+                    <h6 v-if="this.generateBadges('discount') != undefined">
+                        <b>Price with Discount:</b> 
+                        {{ (product.price - ((product.price * generateCalcDiscount(value)))).toFixed(2) }} &euro;
+                    </h6>                  
+                    <button @click="showProduct(display)">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
             </div>
         </div>
         <div class="card rounded-2" @click="showProduct(this.display)">
 
             <!-- image with badges -->
-            <img :src="'/images/' + product.images.front" class="card-img-top" :alt="'image of dress ' + product.brand" @mouseenter="changeImg(this.index)" @mouseleave="returnImg(this.index)">
+            <img :src="'/images/' + product.images.front" class="card-img-top" :alt="'image of dress ' + product.brand"
+                @mouseenter="changeImg(this.index)" @mouseleave="returnImg(this.index)">
             <div class="heart" :class="{ 'heart-red': product.isInFavorite === true }" @click="favorite()"> &#9829;
             </div>
             <div class="badges">
