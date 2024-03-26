@@ -8,6 +8,7 @@ export default {
     data() {
         return {
             img: '',
+            display: true,
         }
     },
     methods: {
@@ -61,15 +62,35 @@ export default {
             } else {
                 return value = value / 100
             }
+        },
+        showProduct(display){
+            console.log(display)
+            if(display == true){
+                return this.display= false
+            }else{
+                return this.display = true
+            }
         }
     },
+    mounted(){
+
+    }
 }
 </script>
 
 <template>
     <!--product -->
-    <div class="product col">
-        <div class="card">
+    <div class="product col">            
+        <div class="modal_card" :class="{'display': this.display == false, 'disp': this.display == true}">
+            <div class="modal_container">
+                Lorem ipsum dolor sit amet.
+                <button @click="showProduct(display)">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card rounded-2" @click="showProduct(this.display)">
+
             <!-- image with badges -->
             <img :src="'/images/' + product.images.front" class="card-img-top" :alt="'image of dress ' + product.brand" @mouseenter="changeImg(this.index)" @mouseleave="returnImg(this.index)">
             <div class="heart" :class="{ 'heart-red': product.isInFavorite === true }" @click="favorite()"> &#9829;

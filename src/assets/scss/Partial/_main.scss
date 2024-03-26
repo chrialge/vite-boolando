@@ -2,14 +2,41 @@
 @use './common';
 
 #site-main {
-    margin-top: 140px;
+    margin-top: 140px;        
 
-    .product>.card {
+
+    .product{    
+        position: relative;
         margin-bottom: 60px;
+        .modal_card{
+            display: none;
+            
+            position: absolute;
+            top: 0;
+            left: 12px;
+            width: calc(100% - 24px);
+            height: 100%;
+            z-index: 4;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .modal_container{
+                background-color: white;
+                height: 100px;
+            }
+        }
+
+        .card {
+        
         border-radius: 1rem;
         box-shadow: 0 0 10px;
         position: relative;
         min-height: 90%;
+
+
 
         .heart {
             position: absolute;
@@ -75,6 +102,8 @@
             }
         }
     }
+    }
+        
 }
 
 .disp {
