@@ -27,7 +27,7 @@ export default {
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
 
                 <ProductCard :key="product.id" :product="product" v-for="product in state.products" />
-
+                
             </div>
 
 

@@ -1,14 +1,20 @@
 <script>
+import ModularProductCard from './ModularProductCard.vue';
+import { state } from '../state.js'
 export default {
     name: 'ProductCard',
     value: '',
     props: {
         product: Object,
     },
+    components:{
+        ModularProductCard
+    },
     data() {
         return {
             img: '',
             display: true,
+            state
         }
     },
     methods: {
@@ -81,6 +87,7 @@ export default {
 <template>
     <!--product -->
     <div class="product col">
+        <ModularProductCard :key="product.id" :product="product" :functionBadge="this.generateBadges('discount')" :functionCalc="generateCalcDiscount(value)"/>
         <div class="modal_card" :class="{'display': this.display == false, 'disp': this.display == true}">
             <div class="modal_container">
                 <div class="left">
