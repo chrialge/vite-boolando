@@ -3,22 +3,24 @@ export default {
     name: 'ModularProductCard',
     props:{
         product: Object,
-        functionBadge: Number,
+        functionBadge: String,
         functionCalc: Number,
         value: Number,
+        display: Boolean,
     },
     data(){
         return {
-            display: true,
+   
         }
     },mounted(){
-
+        console.log(this.display)
+        console.log(this.functionCalc)
     }
 
 }
 </script>
 <template>
-    <div class="modal_card" :class="{ 'display': this.display == false, 'disp': this.display == true }">
+    <div class="modal_card" :class="{ 'visibility-modular': this.display == false, 'disp': display == true }">
         <div class="modal_container">
             <div class="left">
                 <img :src="'/images/' + product.images.front" class="card-img-top"
@@ -32,7 +34,7 @@ export default {
                     <b>Price with Discount:</b>
                     {{ (product.price - ((product.price * functionCalc))).toFixed(2) }} &euro;
                 </h6>
-                <button @click="showProduct(display)">
+                <button @click="$emit('show-product', product, functionBadge)">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>

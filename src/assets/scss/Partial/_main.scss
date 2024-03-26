@@ -2,68 +2,16 @@
 @use './common';
 
 #site-main {
-    margin-top: 140px;        
+    margin-top: 140px;
 
 
-    .product{    
+    .product {
         position: relative;
         margin-bottom: 60px;
-        .modal_card{
-            display: none;
-            
-            position: absolute;
-            top: 0;
-            left: 12px;
-            width: calc(100% - 24px);
-            height: 100%;
-            z-index: 4;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 0.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    }
 
-            .modal_container{
-                background-color: white;
-                display: flex;
+    .card {
 
-                .left{
-                    width: 50%;
-
-                }
-                .right{
-                    width: 50%;
-                    position: relative;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    padding-left: 5px;
-
-                    button{
-                        position: absolute;
-                        top: 2px;
-                        right: 2px;
-                        padding: 0 4px;
-                        border: 2px solid $boolando-lighter;
-                        font-size: 20px;
-                        background-color: $boolando-lighter;
-
-                        &:hover{
-                            border: 2px solid $boolando-primary;
-                            border-radius: 0.25rem;
-                            transition: 0.25s;
-                            color: $boolando-primary;
-                        }
-                    }
-                    h6{
-                        font-size: 14px;
-                    }
-                }
-            }
-        }
-
-        .card {
-        
         border-radius: 1rem;
         box-shadow: 0 0 10px;
         position: relative;
@@ -80,12 +28,13 @@
             background-color: $boolando-lighter;
             cursor: pointer;
 
-            &:hover{
+            &:hover {
                 color: $boolando-sales;
                 transition: 0.2s;
             }
         }
-        .heart-red{
+
+        .heart-red {
             color: red;
         }
 
@@ -135,9 +84,72 @@
             }
         }
     }
-    }
-        
 }
+
+
+    .modal_card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .modal_container {
+            background-color: white;
+            max-width: 1000px;
+            width: 80%;
+            display: flex;
+
+            .left {
+                width: 50%;
+
+            }
+
+            .right {
+                width: 50%;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 5px;
+
+                button {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    padding: 0 8px;
+                    border: 2px solid $boolando-lighter;
+                    font-size: 25px;
+                    background-color: $boolando-lighter;
+
+                    &:hover {
+                        border: 2px solid $boolando-primary;
+                        border-radius: 0.25rem;
+                        transition: 0.25s;
+                        color: $boolando-primary;
+                    }
+                }
+
+                h6 {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .visibility-modular {
+        visibility: visible;
+        z-index: 8;
+    }
+
+
+
 
 .disp {
     display: none !important;

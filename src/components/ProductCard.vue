@@ -1,20 +1,17 @@
 <script>
-import ModularProductCard from './ModularProductCard.vue';
-import { state } from '../state.js'
+
 export default {
     name: 'ProductCard',
     value: '',
     props: {
         product: Object,
     },
-    components:{
-        ModularProductCard
+    components: {
     },
     data() {
         return {
             img: '',
             display: true,
-            state
         }
     },
     methods: {
@@ -69,17 +66,17 @@ export default {
                 return value = value / 100
             }
         },
-        showProduct(display){
+        showProduct(display) {
             console.log(display)
-            if(display == true){
-                return this.display= false
-            }else{
+            if (display == true) {
+                return this.display = false
+            } else {
                 return this.display = true
             }
         }
     },
-    mounted(){
-
+    mounted() {
+console.log(this.value)
     }
 }
 </script>
@@ -87,8 +84,8 @@ export default {
 <template>
     <!--product -->
     <div class="product col">
-        <ModularProductCard :key="product.id" :product="product" :functionBadge="this.generateBadges('discount')" :functionCalc="generateCalcDiscount(value)"/>
-        <div class="modal_card" :class="{'display': this.display == false, 'disp': this.display == true}">
+
+        <!-- <div class="modal_card" :class="{'display': this.display == false, 'disp': this.display == true}">
             <div class="modal_container">
                 <div class="left">
                     <img :src="'/images/' + product.images.front" class="card-img-top"
@@ -108,8 +105,8 @@ export default {
                 </div>
 
             </div>
-        </div>
-        <div class="card rounded-2" @click="showProduct(this.display)">
+        </div> -->
+        <div class="card rounded-2" @click="$emit('show-product', product, generateBadges('discount'), generateCalcDiscount(this.value))">
 
             <!-- image with badges -->
             <img :src="'/images/' + product.images.front" class="card-img-top" :alt="'image of dress ' + product.brand"
