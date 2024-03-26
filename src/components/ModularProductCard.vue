@@ -1,26 +1,38 @@
 <script>
 export default {
     name: 'ModularProductCard',
-    props:{
+    props: {
         product: Object,
-        functionBadge: String,
-        functionCalc: Number,
-        value: Number,
         display: Boolean,
     },
-    data(){
+    data() {
         return {
-   
+            valueDiscount: '',
         }
-    },mounted(){
-        console.log(this.display)
-        console.log(this.functionCalc)
+    },
+    methods: {
+        productprice() {
+            console.log(this.product.badges)
+            for (let i = 0; i < this.product.badges.length; i++) {
+                const discount = this.product.badges[i];
+                if (discount.type == 'discount') {
+                    console.log(discount.value)
+                    this.valueDiscount = discount.value / 100
+                    return true
+                } else {
+                    return false
+                }
+            }
+
+        }
+    },
+    mounted() {
     }
 
 }
 </script>
 <template>
-    <div class="modal_card" :class="{ 'visibility-modular': this.display == false, 'disp': display == true }">
+    <div class="modal_card" :class="{ 'visibility-modular': this.display == false, 'visibility-hidden': display == true }">
         <div class="modal_container">
             <div class="left">
                 <img :src="'/images/' + product.images.front" class="card-img-top"
@@ -30,11 +42,11 @@ export default {
                 <h6><b>Brand:</b> {{ product.brand }}</h6>
                 <h6><b>Type:</b> {{ product.gener }}</h6>
                 <h6><b>Price Full:</b> {{ product.price }} &euro;</h6>
-                <h6 v-if="functionBadge != undefined">
+                <h6 v-if="productprice() == true">
                     <b>Price with Discount:</b>
-                    {{ (product.price - ((product.price * functionCalc))).toFixed(2) }} &euro;
+                    {{ (product.price - ((product.price * Number(valueDiscount)))).toFixed(2) }} &euro;
                 </h6>
-                <button @click="$emit('show-product', product, functionBadge)">
+                <button @click="$emit('show-product', product)">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
