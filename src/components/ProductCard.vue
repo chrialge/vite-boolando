@@ -12,6 +12,7 @@ export default {
         return {
             img: '',
             display: true,
+
         }
     },
     methods: {
@@ -46,28 +47,23 @@ export default {
         generateBadges(type) {
             for (let i = 0; i < this.product.badges.length; i++) {
                 const badge = this.product.badges[i];
-                // console.log(badge)
-                if (badge.type === type) {
-                    // console.log(badge.value)
 
-                    return this.value = badge.value
-                }else{
-                    
+                if (badge.type.includes(type)) {
+                    this.value = badge.value
+                    return true
                 }
             }
         },
-        /**
-         * function generate CALC discount/100
-         * @param {number} value return of the function generateBadges('discount')
-         * @returns number 
-         */
-        generateCalcDiscount(value) {
-            if (value == 1) {
-                return value = 0
+    },
+    computed: {
+        generateCalc() {
+            this.generateBadges('discount')
+            if (this.value == "Sostenibilità") {
+                return this.value = 0
             } else {
-                return value = value / 100
+                return this.value = this.value / 100
             }
-        },
+        }
     },
     mounted() {
     }
@@ -86,11 +82,11 @@ export default {
             <div class="heart" :class="{ 'heart-red': product.isInFavorite === true }" @click="favorite()"> &#9829;
             </div>
             <div class="badges">
-                <div class="sales inline-block-container" v-if="this.generateBadges('discount') !== undefined">
-                    -{{ value }}%
+                <div class="sales inline-block-container" v-if="this.generateBadges('discount')">
+                    -{{ this.value }}%
                 </div>
-                <div class="sostenibility inline-block-container" v-if="this.generateBadges('tag') !== undefined">
-                    {{ value }}
+                <div class="sostenibility inline-block-container" v-if="this.generateBadges('tag')">
+                    {{ this.value }}
                 </div>
 
             </div>
@@ -102,11 +98,10 @@ export default {
                 <h5 class="card-title">{{ product.gener }}</h5>
                 <div class="price">
                     <div class="price">
-                        <div class="price-at-the-moment"
-                            v-if="this.generateBadges('discount') == undefined ? this.value = 1 : this.generateBadges('discount')">
-                            {{ (product.price - ((product.price * generateCalcDiscount(value)))).toFixed(2) }} &euro;
+                        <div class="price-at-the-moment">
+                            {{ (product.price - ((product.price * generateCalc))).toFixed(2) }} &euro;
                         </div>
-                        <div class="full-price" v-if="this.generateBadges('discount') !== undefined">
+                        <div class="full-price" v-if="generateCalc != 0">
                             <s>{{ product.price }} &euro;</s>
                         </div>
                     </div>

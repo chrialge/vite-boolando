@@ -12,15 +12,11 @@ export default {
     },
     methods: {
         productprice() {
-            console.log(this.product.badges)
             for (let i = 0; i < this.product.badges.length; i++) {
                 const discount = this.product.badges[i];
-                if (discount.type == 'discount') {
-                    console.log(discount.value)
+                if (discount.type.includes('discount')) {
                     this.valueDiscount = discount.value / 100
                     return true
-                } else {
-                    return false
                 }
             }
 
@@ -32,7 +28,8 @@ export default {
 }
 </script>
 <template>
-    <div class="modal_card" :class="{ 'visibility-modular': this.display == false, 'visibility-hidden': display == true }">
+    <div class="modal_card"
+        :class="{ 'visibility-modular': this.display == false, 'visibility-hidden': display == true }">
         <div class="modal_container">
             <div class="left">
                 <img :src="'/images/' + product.images.front" class="card-img-top"
