@@ -56,6 +56,10 @@ export default {
         },
     },
     computed: {
+
+        /**
+         * funzione che mi dara l operando con cui calcolare il prezzo discount
+         */
         generateCalc() {
             this.generateBadges('discount')
             if (this.value == "Sostenibilità") {

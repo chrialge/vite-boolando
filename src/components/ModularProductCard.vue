@@ -11,6 +11,10 @@ export default {
         }
     },
     methods: {
+
+        /**
+         * funzione che mi ridara l operando con cui calcolera il prezzo discount e cpme return ci da true
+         */
         productprice() {
             for (let i = 0; i < this.product.badges.length; i++) {
                 const discount = this.product.badges[i];
